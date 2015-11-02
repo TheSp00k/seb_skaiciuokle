@@ -3,85 +3,97 @@
 </head>
 
 <body>
-{{> header}}
-{{> main_content}}
-{{> currency_changer}}
+    {{> header}}
+    <div class="main_content">
+        {{> main_content}}
+        {{> currency_changer}}
+    </div>
 </body>
 
 <template name="header">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <div class="header">
+        <nav class="navbar">
+            <div class="navbar-header left">
+                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"-->
+                <!--aria-expanded="false" aria-controls="navbar">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
                 <span class="navbar-logo">LOGO</span>
             </div>
-            <div id="navbar" class="navbar-collapse navbar-right collapse">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">menu link</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">„Skype“ (visą parą)</a></li>
-                            <li><a href="#">Rašykite mums</a></li>
-                            <li><a href="#">Savitarnos zonos</a></li>
-                            <li><a href="#">Banko skyriai</a></li>
-                            <li><a href="#">Bankomatai</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">menu link</a></li>
-                    <li><a href="#about">menu link</a></li>
-                    <li><a href="#contact">menu link</a></li>
+            <!--<div id="navbar">-->
+            <ul class="navigation right">
+                <li class="dropdown">
+                    <a href="#">menu link</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">„Skype“ (visą parą)</a></li>
+                        <li><a href="#">Rašykite mums</a></li>
+                        <li><a href="#">Savitarnos zonos</a></li>
+                        <li><a href="#">Banko skyriai</a></li>
+                        <li><a href="#">Bankomatai</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">menu link</a></li>
+                <li class="dropdown">
+                    <a href="#">menu link</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">„Skype“ (visą parą)</a></li>
+                        <li><a href="#">Rašykite mums</a></li>
+                        <li><a href="#">Savitarnos zonos</a></li>
+                        <li><a href="#">Banko skyriai</a></li>
+                        <li><a href="#">Bankomatai</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">menu link</a></li>
 
-                </ul>
-            </div>
+            </ul>
+            <!--</div>-->
             <!--/.nav-collapse -->
-        </div>
-    </nav>
+        </nav>
+    </div>
 </template>
 
 <template name="main_content">
-    <div class="container">
-        <section class="jumbotron">
-            <h1>Norintys kurti verslą mažiau bijo rizikos</h1>
-            <p>
-                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
-                kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus –
-                skyriaus vadovu ir štai dabar jau yra viceprezidentas. „Ačiū, tėveli“, - atsako jaunuolis. Tačiau šį
-                kartą kalbėsime ne apie tuos tėvus, kurie savo vaikus tiesiog pasodina šiltoje vietoje. Kalbėsime, ar
-                iš tiesų yra verslumo genų?
-            </p>
 
-            <p>
-                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
-                kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus –
-                skyriaus vadovu ir štai dabar jau yra viceprezidentas. „Ačiū, tėveli“, - atsako jaunuolis. Tačiau šį
-                kartą kalbėsime ne apie tuos tėvus, kurie savo vaikus tiesiog pasodina šiltoje vietoje. Kalbėsime, ar
-                iš tiesų yra verslumo genų?
-            </p>
+    <section class="jumbotron col-xs-12 col-sm-6 col-lg-9">
+        <h1>Norintys kurti verslą mažiau bijo rizikos</h1>
 
-            <p>
-                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
-                kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus –
-                skyriaus vadovu ir štai dabar jau yra viceprezidentas. „Ačiū, tėveli“, - atsako jaunuolis. Tačiau šį
-                kartą kalbėsime ne apie tuos tėvus, kurie savo vaikus tiesiog pasodina šiltoje vietoje. Kalbėsime, ar
-                iš tiesų yra verslumo genų?
-            </p>
+        <p>
+            Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
+            kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus –
+            skyriaus vadovu ir štai dabar jau yra viceprezidentas. „Ačiū, tėveli“, - atsako jaunuolis. Tačiau šį
+            kartą kalbėsime ne apie tuos tėvus, kurie savo vaikus tiesiog pasodina šiltoje vietoje. Kalbėsime, ar
+            iš tiesų yra verslumo genų?
+        </p>
 
-            <p>
-                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
-                kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.
-            </p>
-        </section>
-    </div>
+        <p>
+            Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
+            kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus –
+            skyriaus vadovu ir štai dabar jau yra viceprezidentas. „Ačiū, tėveli“, - atsako jaunuolis. Tačiau šį
+            kartą kalbėsime ne apie tuos tėvus, kurie savo vaikus tiesiog pasodina šiltoje vietoje. Kalbėsime, ar
+            iš tiesų yra verslumo genų?
+        </p>
+
+        <p>
+            Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
+            kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus –
+            skyriaus vadovu ir štai dabar jau yra viceprezidentas. „Ačiū, tėveli“, - atsako jaunuolis. Tačiau šį
+            kartą kalbėsime ne apie tuos tėvus, kurie savo vaikus tiesiog pasodina šiltoje vietoje. Kalbėsime, ar
+            iš tiesų yra verslumo genų?
+        </p>
+
+        <p>
+            Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
+            kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.
+        </p>
+    </section>
 </template>
 <template name="currency_changer">
-    <section>
+    <section class="currency_counter col-xs-12 col-sm-6 col-lg-8">
         <h1>Euro ir užsienio valiutų santykiai</h1>
+
         <form>
             <label for="having">Turiu (noriu parduoti)</label>
             <input type="text" id="having" name="having" placeholder="1,00"/>
@@ -92,7 +104,7 @@
                 <option>USD</option>
             </select>
 
-            <label for="">Noriu gauti (noriu pirkti)</label>
+            <label for="getting">Noriu gauti (noriu pirkti)</label>
             <input type="text" id="getting" name="getting" placeholder="1,00"/>
 
             <select name="getting_currency">

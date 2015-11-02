@@ -3,13 +3,13 @@ if (Meteor.isClient) {
     Session.setDefault('counter', 0);
 
     Template.header.events({
-        'mouseenter div#navbar li.dropdown': function (event) {
-            //template.addClass('open');
+        'mouseenter .navigation li.dropdown': function (event) {
+            $(event.target).removeClass('close');
             $(event.target).addClass('open');
         },
-        'mouseleave div#navbar li.dropdown': function (event) {
-            //template.addClass('open');
+        'mouseleave .navigation li.dropdown': function (event) {
             $(event.target).removeClass('open');
+            $(event.target).addClass('close');
         }
     });
 
