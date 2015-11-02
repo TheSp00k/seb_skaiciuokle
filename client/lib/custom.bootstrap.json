@@ -2,9 +2,9 @@
   "modules" : {
     "normalize"            : true,
     "print"                : false,
-    "glyphicons"           : false,
+    "glyphicons"           : true,
 
-    "scaffolding"          : false,
+    "scaffolding"          : true,
     "type"                 : true,
     "code"                 : false,
     "grid"                 : true,

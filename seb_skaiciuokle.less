@@ -1,11 +1,98 @@
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
 
-@body-min-height: 2000px;
-@body-padding-top: 70px;
+@navbar-default-color: #ffffff;
+@navbar-min-fontsize: 20px;
+@navbar-min-padding-top: 35px;
+
+@navbar-link-hover-color: #333333;
+
+@dropdown-menu-bg-color: #4d4d4d;
+
+@body-padding-top: 155px;
 
 body {
   background-color: @light-blue;
-  min-height: @body-min-height;
   padding-top: @body-padding-top;
+  font-family: 'Trebuchet MS';
+}
+
+.navbar-default {
+  font-size: @navbar-min-fontsize;
+  .navbar-logo {
+    color: @navbar-default-color;
+    padding-top: @navbar-min-padding-top;
+    font-size: @navbar-min-fontsize + 40px;
+    display: block;
+    font-weight: bold;
+  }
+
+  .container {
+    padding: 0 50px;
+  }
+
+  .navbar-nav > li > a {
+    padding: @navbar-min-padding-top + 45px 10px 20px 10px;
+    &:hover {
+      color: @navbar-link-hover-color;
+    }
+  }
+  .navbar-nav > .open > a:hover {
+    color: @navbar-link-hover-color;
+  }
+}
+
+.navbar-right .dropdown-menu {
+  background-color: @dropdown-menu-bg-color;
+  min-width: 150px;
+  border-radius: 0;
+  left: -17px;
+  &:after {
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    margin-left: -16px;
+    content: '';
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid @dropdown-menu-bg-color;
+  }
+  li, li > a {
+    color: @navbar-default-color;
+    font-size: 12px;
+    &:hover, &:focus {
+      color: @navbar-default-color;
+      background-color: #666666;
+    }
+  }
+  li > a {
+    padding: 3px 10px;
+  }
+}
+
+.container .jumbotron {
+  border-radius: 0;
+  padding: 20px 25px;
+  h1 {
+    font-weight: bold;
+    padding: 0;
+    margin-top: 0;
+    font-size: 37.5px;
+    font-family: 'Times New Roman';
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+
+.Skaiciuoti {
+  font-size: 14px;
+  font-family: "Trebuchet MS";
+  color: rgb(254, 254, 254);
+  text-transform: uppercase;
+
+}
+.Rounded_Rectangle_1 {
+  background-color: rgb(0, 0, 0);
 }
