@@ -7,6 +7,7 @@
     <div class="main_content">
         {{> main_content}}
         {{> currency_changer}}
+        {{> bottom_articles}}
     </div>
 </body>
 
@@ -14,16 +15,10 @@
     <div class="header">
         <nav class="navbar">
             <div class="navbar-header left">
-                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"-->
-                <!--aria-expanded="false" aria-controls="navbar">-->
-                <!--<span class="sr-only">Toggle navigation</span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
                 <span class="navbar-logo">LOGO</span>
             </div>
             <!--<div id="navbar">-->
+            <a href="#" id="menu-icon"></a>
             <ul class="navigation right">
                 <li class="dropdown">
                     <a href="#">menu link</a>
@@ -57,7 +52,7 @@
 
 <template name="main_content">
 
-    <section class="jumbotron col-xs-12 col-sm-6 col-lg-9">
+    <section class="main-content">
         <h1>Norintys kurti verslą mažiau bijo rizikos</h1>
 
         <p>
@@ -98,7 +93,7 @@
             <label for="having">Turiu (noriu parduoti)</label>
             <input type="text" id="having" name="having" placeholder="1,00"/>
 
-            <select name="having_currency">
+            <select class="custom-select" name="having_currency">
                 <option>USD</option>
                 <option>USD</option>
                 <option>USD</option>
@@ -112,8 +107,34 @@
                 <option>USD</option>
                 <option>USD</option>
             </select>
-            <input type="submit">
+            <input value="SKAIČIUOTI" type="submit"/>
         </form>
     </section>
+</template>
 
+<template name="bottom_articles">
+    <section class="main-content bottom-articles">
+        <article class="article-menu">
+            <header>Fondai, investavimo kryptys</header>
+            <ul>
+                <li><a>Investiciniai fondai</a></li>
+                <li><a>Pencijų fondai</a></li>
+                <li><a>Investavimo kryptys</a></li>
+            </ul>
+        </article>
+        <article>
+            <div>
+                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai, kad vos
+                atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus – skyriaus
+                vadovu ir štai dabar jau yra viceprezidentas.
+            </div>
+        </article>
+        <article>
+            <header>Ar verslininkais gimstama, ar tampama?</header>
+            <div>
+                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
+                kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.
+            </div>
+        </article>
+    </section>
 </template>

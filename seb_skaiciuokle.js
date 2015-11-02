@@ -4,26 +4,43 @@ if (Meteor.isClient) {
 
     Template.header.events({
         'mouseenter .navigation li.dropdown': function (event) {
-            $(event.target).removeClass('close');
-            $(event.target).addClass('open');
+            if (!$('.navigation').hasClass('mobile')) {
+                $(event.target).removeClass('close');
+                $(event.target).addClass('open');
+            }
         },
         'mouseleave .navigation li.dropdown': function (event) {
-            $(event.target).removeClass('open');
-            $(event.target).addClass('close');
-        }
-    });
+            if (!$('.navigation').hasClass('mobile')) {
+                $(event.target).removeClass('open');
+                $(event.target).addClass('close');
+            }
+        },
+        'click #menu-icon': function () {
+            if(!$('.navigation').hasClass('mobile')) {
+                $('.navigation').addClass('mobile');
+            } else {
+                $('.navigation').removeClass('mobile');
+                $('.navigation').removeClass('close');
+            }
 
-    Template.main_content.helpers({
-        counter: function () {
-            return Session.get('counter');
+            if ($('.navigation').hasClass('open')) {
+                $('.navbar > ul.navigation').removeClass('open');
+                $('.navbar > ul.navigation').addClass('close');
+            } else {
+                $('.navbar > ul.navigation').removeClass('close');
+                $('.navbar > ul.navigation').addClass('open');
+            }
+        },
+        'click .mobile li.dropdown': function(event) {
+            if ($(event.target.parentNode).hasClass('open')) {
+                $(event.target.parentNode).removeClass('open');
+                $(event.target.parentNode).addClass('close');
+            } else {
+                $(event.target.parentNode).removeClass('close');
+                $(event.target.parentNode).addClass('open');
+            }
         }
-    });
 
-    Template.main_content.events({
-        'click button': function () {
-            // increment the counter when button is clicked
-            Session.set('counter', Session.get('counter') + 1);
-        }
     });
 }
 
