@@ -3,12 +3,12 @@
 </head>
 
 <body>
-    {{> header}}
-    <div class="main_content">
-        {{> main_content}}
-        {{> currency_changer}}
-        {{> bottom_articles}}
-    </div>
+{{> header}}
+<div class="main_content">
+    {{> main_content}}
+    {{> currency_changer}}
+    {{> bottom_articles}}
+</div>
 </body>
 
 <template name="header">
@@ -52,7 +52,7 @@
 
 <template name="main_content">
 
-    <section class="main-content">
+    <section class="main-content col-9">
         <h1>Norintys kurti verslą mažiau bijo rizikos</h1>
 
         <p>
@@ -86,7 +86,7 @@
     </section>
 </template>
 <template name="currency_changer">
-    <section class="currency_counter col-xs-12 col-sm-6 col-lg-8">
+    <section class="currency_counter col-3">
         <h1>Euro ir užsienio valiutų santykiai</h1>
 
         <form>
@@ -113,28 +113,51 @@
 </template>
 
 <template name="bottom_articles">
-    <section class="main-content bottom-articles">
-        <article class="article-menu">
+    <section class="main-content bottom-articles col-12">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="33%">
+                    <article class="article-left">
+                        <header>Fondai, investavimo kryptys</header>
+                        <ul class="article-list">
+                            <li><a href="#">Investiciniai fondai</a></li>
+                            <li><a href="#">Pencijų fondai</a></li>
+                            <li><a href="#">Investavimo kryptys</a></li>
+                        </ul>
+                    </article>
+                </td>
+                <td width="33%"><article class="article-middle"><p>Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano
+                            apie tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
+                            neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.</p></article></td>
+                <td width="33%"><article class="article-right"><header>Ar verslininkais gimstama, ar tampama?</header><p>Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.</p></article></td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section class="main-content bottom-articles col-12">
+        <article class="article-left col-4">
             <header>Fondai, investavimo kryptys</header>
-            <ul>
-                <li><a>Investiciniai fondai</a></li>
-                <li><a>Pencijų fondai</a></li>
-                <li><a>Investavimo kryptys</a></li>
+            <ul class="article-list">
+                <li><a href="#">Investiciniai fondai</a></li>
+                <li><a href="#">Pencijų fondai</a></li>
+                <li><a href="#">Investavimo kryptys</a></li>
             </ul>
         </article>
-        <article>
-            <div>
-                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai, kad vos
+        <article class="article-middle col-4">
+            <p>
+                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai, kad
+                vos
                 atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus – skyriaus
                 vadovu ir štai dabar jau yra viceprezidentas.
-            </div>
+            </p>
         </article>
-        <article>
+        <article class="article-right col-4">
             <header>Ar verslininkais gimstama, ar tampama?</header>
-            <div>
+            <p>
                 Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
                 kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.
-            </div>
+            </p>
         </article>
     </section>
 </template>
