@@ -24,11 +24,11 @@ if (Meteor.isClient) {
             }
 
             if ($('.navigation').hasClass('open')) {
-                $('header > ul.navigation').removeClass('open');
-                $('header > ul.navigation').addClass('close');
+                $('header > .header-content > ul.navigation').removeClass('open');
+                $('header > .header-content > ul.navigation').addClass('close');
             } else {
-                $('header > ul.navigation').removeClass('close');
-                $('header > ul.navigation').addClass('open');
+                $('header > .header-content > ul.navigation').removeClass('close');
+                $('header > .header-content > ul.navigation').addClass('open');
             }
         },
         'click .mobile li.dropdown': function(event) {

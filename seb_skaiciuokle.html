@@ -15,40 +15,42 @@
 
 <template name="header">
     <header>
-        <div class="navbar-header left">
-            <span class="navbar-logo">LOGO</span>
+        <div class="header-content">
+            <div class="navbar-header left">
+                <span class="navbar-logo">LOGO</span>
+            </div>
+            <a href="#" id="menu-icon"></a>
+            <ul class="navigation right">
+                <li class="dropdown">
+                    <a href="#">menu link</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">„Skype“ (visą parą)</a></li>
+                        <li><a href="#">Rašykite mums</a></li>
+                        <li><a href="#">Savitarnos zonos</a></li>
+                        <li><a href="#">Banko skyriai</a></li>
+                        <li><a href="#">Bankomatai</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">menu link</a></li>
+                <li class="dropdown">
+                    <a href="#">menu link</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">„Skype“ (visą parą)</a></li>
+                        <li><a href="#">Rašykite mums</a></li>
+                        <li><a href="#">Savitarnos zonos</a></li>
+                        <li><a href="#">Banko skyriai</a></li>
+                        <li><a href="#">Bankomatai</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">menu link</a></li>
+            </ul>
         </div>
-        <a href="#" id="menu-icon"></a>
-        <ul class="navigation right">
-            <li class="dropdown">
-                <a href="#">menu link</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">„Skype“ (visą parą)</a></li>
-                    <li><a href="#">Rašykite mums</a></li>
-                    <li><a href="#">Savitarnos zonos</a></li>
-                    <li><a href="#">Banko skyriai</a></li>
-                    <li><a href="#">Bankomatai</a></li>
-                </ul>
-            </li>
-            <li><a href="#about">menu link</a></li>
-            <li class="dropdown">
-                <a href="#">menu link</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">„Skype“ (visą parą)</a></li>
-                    <li><a href="#">Rašykite mums</a></li>
-                    <li><a href="#">Savitarnos zonos</a></li>
-                    <li><a href="#">Banko skyriai</a></li>
-                    <li><a href="#">Bankomatai</a></li>
-                </ul>
-            </li>
-            <li><a href="#contact">menu link</a></li>
-        </ul>
     </header>
 </template>
 
 <template name="main_content">
 
-    <section class="main-content col-9">
+    <section class="main-content col-8">
         <h1>Norintys kurti verslą mažiau bijo rizikos</h1>
 
         <p>
@@ -82,7 +84,7 @@
     </section>
 </template>
 <template name="currency_changer">
-    <section class="currency_counter col-3">
+    <section class="currency_counter col-4">
         <h1>Euro ir užsienio valiutų santykiai</h1>
 
         <form>
@@ -133,6 +135,7 @@
                 <td>
                     <article class="article-right">
                         <h2>Ar verslininkais gimstama, ar tampama?</h2>
+
                         <p>Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano
                             apie tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.
                         </p>
@@ -145,33 +148,40 @@
 
 <template name="footer">
     <footer class="footer col-12">
-        <div class="breadcrumbs">
-            Home > Other > Ohert
+        <div class="footer-content">
+            <div class="breadcrumbs">
+                Home > Other > Ohert
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <p class="footer-article">
+                            Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano
+                            apie
+                            tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
+                            neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
+                        </p>
+                    </td>
+                    <td>
+                        <p class="footer-article">
+                            Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano
+                            apie
+                            tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
+                            neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
+                        </p>
+                    </td>
+                    <td>
+                        <p class="footer-article">
+                            Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano
+                            apie
+                            tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
+                            neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <p class="advice">Rekomenduojame prieš sudarant bet kokią finansinių paslaugų sutartį atidžiai išnagrinėti
+                paslaugų teikimo sąlygas</p>
         </div>
-        <table>
-            <tr>
-                <td>
-                    <p class="footer-article">
-                        Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie
-                        tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
-                        neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
-                    </p>
-                </td>
-                <td>
-                    <p class="footer-article">
-                        Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie
-                        tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
-                        neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
-                    </p>
-                </td>
-                <td>
-                    <p class="footer-article">
-                        Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie
-                        tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
-                        neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
-                    </p>
-                </td>
-            </tr>
-        </table>
     </footer>
 </template>
