@@ -9,45 +9,41 @@
     {{> currency_changer}}
     {{> bottom_articles}}
 </div>
+{{> footer}}
+
 </body>
 
 <template name="header">
-    <div class="header">
-        <nav class="navbar">
-            <div class="navbar-header left">
-                <span class="navbar-logo">LOGO</span>
-            </div>
-            <!--<div id="navbar">-->
-            <a href="#" id="menu-icon"></a>
-            <ul class="navigation right">
-                <li class="dropdown">
-                    <a href="#">menu link</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">„Skype“ (visą parą)</a></li>
-                        <li><a href="#">Rašykite mums</a></li>
-                        <li><a href="#">Savitarnos zonos</a></li>
-                        <li><a href="#">Banko skyriai</a></li>
-                        <li><a href="#">Bankomatai</a></li>
-                    </ul>
-                </li>
-                <li><a href="#about">menu link</a></li>
-                <li class="dropdown">
-                    <a href="#">menu link</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">„Skype“ (visą parą)</a></li>
-                        <li><a href="#">Rašykite mums</a></li>
-                        <li><a href="#">Savitarnos zonos</a></li>
-                        <li><a href="#">Banko skyriai</a></li>
-                        <li><a href="#">Bankomatai</a></li>
-                    </ul>
-                </li>
-                <li><a href="#contact">menu link</a></li>
-
-            </ul>
-            <!--</div>-->
-            <!--/.nav-collapse -->
-        </nav>
-    </div>
+    <header>
+        <div class="navbar-header left">
+            <span class="navbar-logo">LOGO</span>
+        </div>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation right">
+            <li class="dropdown">
+                <a href="#">menu link</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">„Skype“ (visą parą)</a></li>
+                    <li><a href="#">Rašykite mums</a></li>
+                    <li><a href="#">Savitarnos zonos</a></li>
+                    <li><a href="#">Banko skyriai</a></li>
+                    <li><a href="#">Bankomatai</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">menu link</a></li>
+            <li class="dropdown">
+                <a href="#">menu link</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">„Skype“ (visą parą)</a></li>
+                    <li><a href="#">Rašykite mums</a></li>
+                    <li><a href="#">Savitarnos zonos</a></li>
+                    <li><a href="#">Banko skyriai</a></li>
+                    <li><a href="#">Bankomatai</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">menu link</a></li>
+        </ul>
+    </header>
 </template>
 
 <template name="main_content">
@@ -113,12 +109,12 @@
 </template>
 
 <template name="bottom_articles">
-    <section class="main-content bottom-articles col-12">
-        <table border="0" cellpadding="0" cellspacing="0">
+    <div class="main-content bottom-articles col-12">
+        <table>
             <tr>
-                <td width="33%">
+                <td>
                     <article class="article-left">
-                        <header>Fondai, investavimo kryptys</header>
+                        <h2>Fondai, investavimo kryptys</h2>
                         <ul class="article-list">
                             <li><a href="#">Investiciniai fondai</a></li>
                             <li><a href="#">Pencijų fondai</a></li>
@@ -126,38 +122,56 @@
                         </ul>
                     </article>
                 </td>
-                <td width="33%"><article class="article-middle"><p>Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano
-                            apie tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
-                            neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.</p></article></td>
-                <td width="33%"><article class="article-right"><header>Ar verslininkais gimstama, ar tampama?</header><p>Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.</p></article></td>
+                <td class="article-middle">
+                    <p>
+                        Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas
+                        klausia, ką jaunuolis mano apie tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis
+                        greitai tapo vadybininku, neilgai trukus – skyriaus vadovu ir štai dabar jau yra
+                        viceprezidentas.
+                    </p>
+                </td>
+                <td>
+                    <article class="article-right">
+                        <h2>Ar verslininkais gimstama, ar tampama?</h2>
+                        <p>Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano
+                            apie tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.
+                        </p>
+                    </article>
+                </td>
             </tr>
         </table>
-    </section>
+    </div>
+</template>
 
-
-    <section class="main-content bottom-articles col-12">
-        <article class="article-left col-4">
-            <header>Fondai, investavimo kryptys</header>
-            <ul class="article-list">
-                <li><a href="#">Investiciniai fondai</a></li>
-                <li><a href="#">Pencijų fondai</a></li>
-                <li><a href="#">Investavimo kryptys</a></li>
-            </ul>
-        </article>
-        <article class="article-middle col-4">
-            <p>
-                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai, kad
-                vos
-                atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku, neilgai trukus – skyriaus
-                vadovu ir štai dabar jau yra viceprezidentas.
-            </p>
-        </article>
-        <article class="article-right col-4">
-            <header>Ar verslininkais gimstama, ar tampama?</header>
-            <p>
-                Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie tai,
-                kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko.
-            </p>
-        </article>
-    </section>
+<template name="footer">
+    <footer class="footer col-12">
+        <div class="breadcrumbs">
+            Home > Other > Ohert
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <p class="footer-article">
+                        Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie
+                        tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
+                        neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
+                    </p>
+                </td>
+                <td>
+                    <p class="footer-article">
+                        Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie
+                        tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
+                        neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
+                    </p>
+                </td>
+                <td>
+                    <p class="footer-article">
+                        Yra toks anekdotas apie jauną vaikiną, kurio įmonės prezidentas klausia, ką jaunuolis mano apie
+                        tai, kad vos atėjęs į bendrovę ir pradėjęs nuo pasiuntinuko, šis greitai tapo vadybininku,
+                        neilgai trukus – skyriaus vadovu ir štai dabar jau yra viceprezidentas.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </footer>
 </template>
