@@ -16,7 +16,7 @@ if (Meteor.isClient) {
             }
         },
         'click #menu-icon': function () {
-            if(!$('.navigation').hasClass('mobile')) {
+            if (!$('.navigation').hasClass('mobile')) {
                 $('.navigation').addClass('mobile');
             } else {
                 $('.navigation').removeClass('mobile');
@@ -31,7 +31,7 @@ if (Meteor.isClient) {
                 $('header > .header-content > ul.navigation').addClass('open');
             }
         },
-        'click .mobile li.dropdown': function(event) {
+        'click .mobile li.dropdown': function (event) {
             if ($(event.target.parentNode).hasClass('open')) {
                 $(event.target.parentNode).removeClass('open');
                 $(event.target.parentNode).addClass('close');
@@ -45,6 +45,36 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+    //var future = new (Npm.require('fibers/future'))();
+
+    var x = xray('github.com/stars/matthewmueller')
+        .select([{
+            $root: '.repo-list-item',
+            title: '.repo-list-name',
+            link: '.repo-list-name a[href]',
+            description: '.repo-list-description',
+            meta: {
+                $root: '.repo-list-meta',
+                starredOn: 'time'
+            }
+        }])
+        .paginate('.pagination a:last-child[href]')
+        .limit(10)
+        .write('out.json');
+console.log(x);
+    //xray('https://e.seb.lt/mainib/web.p?act=currencyrates&lang=LIT')
+    //    .select('body')
+    //    .run(function (err, obj) {
+    //        if (!err) {
+    //            console.log(0, obj);
+    //        } else {
+    //            console.log(1, obj);
+    //        }
+    //    });
+
+// Google's title will get stored
+//    var title = future.wait();
+//    console.log(title);
     Meteor.startup(function () {
         // code to run on server at startup
     });

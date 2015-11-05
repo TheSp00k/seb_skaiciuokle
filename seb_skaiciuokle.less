@@ -133,6 +133,7 @@ li > a {
 	border-radius: 0;
 	padding: 20px 25px;
 	margin-right: 20px;
+	margin-bottom: 20px;
 	background-color: #f3f3f3;
 	h1 {
 		font-weight: bold;
@@ -149,29 +150,46 @@ li > a {
 .currency_counter {
 	display: inline-block;
 	border: 1px solid #898989;
+	margin-bottom: 20px;
+	padding: 0;
+	h2 {
+		font-size: 24px;
+		font-family: 'Times New Roman';
+		margin: 0;
+	}
 	form {
 		padding: 20px;
-		input, select {
-			width: 100%;
-			height: 30px;
-			padding-left: 10px;
-		}
-		.custom-select {
-			border-width: 1px;
-			border-color: rgb(137, 137, 137);
-			border-style: solid;
-			background-image: -moz-linear-gradient(90deg, rgb(175, 175, 175) 0%, rgb(255, 255, 255) 100%);
-			background-image: -webkit-linear-gradient(90deg, rgb(175, 175, 175) 0%, rgb(255, 255, 255) 100%);
-			background-image: -ms-linear-gradient(90deg, rgb(175, 175, 175) 0%, rgb(255, 255, 255) 100%);
+		.form-part {
+			margin-bottom: 25px;
+
+			label {
+				line-height: 25px;
+			}
+			input, select {
+				width: 100%;
+				height: 30px;
+				padding-left: 10px;
+			}
+			select.custom-select {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				background: url('https://www.seb.lt/sites/all/themes/seb_theme/images/base_theme/arrow_down2.gif') 100% 50% no-repeat, -moz-linear-gradient(90deg, rgb(175, 175, 175) 0%, rgb(255, 255, 255) 100%);
+				background: url('https://www.seb.lt/sites/all/themes/seb_theme/images/base_theme/arrow_down2.gif') 100% 50% no-repeat, -webkit-linear-gradient(90deg, rgb(175, 175, 175) 0%, rgb(255, 255, 255) 100%);
+				background: url('https://www.seb.lt/sites/all/themes/seb_theme/images/base_theme/arrow_down2.gif') 100% 50% no-repeat, -ms-linear-gradient(90deg, rgb(175, 175, 175) 0%, rgb(255, 255, 255) 100%);
+				margin-top: 15px;
+				border-width: 1px;
+				border-color: rgb(137, 137, 137);
+				border-style: solid;
+			}
 		}
 	}
 }
 
 .main-content.bottom-articles {
-	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 0 0 20px 0;
-	td article, td.article-middle p {
+	article, .article-middle p {
 		margin-right: 40px;
 	}
 	td.article-middle {
@@ -182,9 +200,9 @@ li > a {
 	}
 }
 
-.article-header-styles(@bg-color, @top-padding) {
+.article-header-styles(@bg-color) {
 	background-color: @bg-color;
-	padding-top: @top-padding;
+	padding-top: 5px;
 	font-size: 24px;
 	color: #ffffff;
 	font-weight: bold;
@@ -193,13 +211,13 @@ li > a {
 }
 
 .article-left h2 {
-	.article-header-styles(#58c50f, 25px);
+	.article-header-styles(#58c50f);
 	border: solid #469e0c 1px;
 	.padding-sides(20px);
 }
 
 .article-right h2 {
-	.article-header-styles(#0092aa, 5px);
+	.article-header-styles(#0092aa);
 	border-bottom: solid #000000 3px;
 }
 
@@ -229,8 +247,20 @@ li > a {
 	.main_content, header {
 		.padding-sides(@page-padding-side - 50px);
 	}
-	.main-content, .currency_counter {
+
+	.main-content, .currency_counter, table > tr > td {
 		width: 100%;
+		display: block;
+		> .article-left {
+			margin-right: 0 !important;
+		}
+		> .article-right h2 {
+			padding-left: 20px;
+		}
+		p {
+			margin-left: 20px !important;
+			margin-right: 20px !important;
+		}
 	}
 
 	header > .header-content > ul.navigation > li {
@@ -268,12 +298,6 @@ li > a {
 	}
 
 }
-
-//@media (max-width: 1350px) and (min-width: 1200px) {
-//	.main-content {
-//		width: 70%;
-//	}
-//}
 
 @media (max-width: 1000px) {
 	.main_content, header {
@@ -395,18 +419,7 @@ footer {
 //	top: 355.095px;
 //	z-index: 58;
 //}
-//.Shape_2 {
-//	border-width: 3px;
-//	border-color: rgb(58, 58, 58);
-//	border-style: solid;
-//	background-color: rgb(58, 58, 58);
-//	position: absolute;
-//	left: 1041px;
-//	top: 431px;
-//	width: 7px;
-//	height: 6px;
-//	z-index: 57;
-//}
+
 //.Rectangle_1 {
 //	border-width: 1px;
 //	border-color: rgb(137, 137, 137);

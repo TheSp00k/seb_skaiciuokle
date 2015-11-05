@@ -85,26 +85,30 @@
 </template>
 <template name="currency_changer">
     <section class="currency_counter col-4">
-        <h1>Euro ir užsienio valiutų santykiai</h1>
+        <h2>Euro ir užsienio valiutų santykiai</h2>
 
         <form>
-            <label for="having">Turiu (noriu parduoti)</label>
-            <input type="text" id="having" name="having" placeholder="1,00"/>
+            <div class="form-part">
+                <label for="having">Turiu (noriu parduoti)</label>
+                <input type="text" id="having" name="having" placeholder="1,00"/>
 
-            <select class="custom-select" name="having_currency">
-                <option>USD</option>
-                <option>USD</option>
-                <option>USD</option>
-            </select>
+                <select class="custom-select" name="having_currency">
+                    <option>USD</option>
+                    <option>USD</option>
+                    <option>USD</option>
+                </select>
+            </div>
 
-            <label for="getting">Noriu gauti (noriu pirkti)</label>
-            <input type="text" id="getting" name="getting" placeholder="1,00"/>
+            <div class="form-part">
+                <label for="getting">Noriu gauti (noriu pirkti)</label>
+                <input type="text" id="getting" name="getting" placeholder="1,00"/>
 
-            <select name="getting_currency">
-                <option>USD</option>
-                <option>USD</option>
-                <option>USD</option>
-            </select>
+                <select class="custom-select" name="getting_currency">
+                    <option>USD</option>
+                    <option>USD</option>
+                    <option>USD</option>
+                </select>
+            </div>
             <input value="SKAIČIUOTI" type="submit"/>
         </form>
     </section>
