@@ -19,4 +19,9 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 less
 http
-lai:meteor-xray
+bobbigmac:scrape-parser
+underscore
+meteorhacks:npm
+
+
+npm-container

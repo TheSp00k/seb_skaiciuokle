@@ -42,40 +42,39 @@ if (Meteor.isClient) {
         }
 
     });
+
+    Meteor.call('getCurrencies', function (error, result) {
+        if (error) {
+            console.log('error', error);
+        }
+        console.log(result);
+
+        Session.set("currencies", result);
+    });
+
+    Template.currency_changer.helpers({
+        calculator: function () {
+            return Session.get("currencies");
+        }
+    });
 }
 
 if (Meteor.isServer) {
-    //var future = new (Npm.require('fibers/future'))();
-
-    var x = xray('github.com/stars/matthewmueller')
-        .select([{
-            $root: '.repo-list-item',
-            title: '.repo-list-name',
-            link: '.repo-list-name a[href]',
-            description: '.repo-list-description',
-            meta: {
-                $root: '.repo-list-meta',
-                starredOn: 'time'
-            }
-        }])
-        .paginate('.pagination a:last-child[href]')
-        .limit(10)
-        .write('out.json');
-console.log(x);
-    //xray('https://e.seb.lt/mainib/web.p?act=currencyrates&lang=LIT')
-    //    .select('body')
-    //    .run(function (err, obj) {
-    //        if (!err) {
-    //            console.log(0, obj);
-    //        } else {
-    //            console.log(1, obj);
-    //        }
-    //    });
-
-// Google's title will get stored
-//    var title = future.wait();
-//    console.log(title);
     Meteor.startup(function () {
-        // code to run on server at startup
+        var cheerio = Meteor.npmRequire("cheerio");
+
+        Meteor.methods({
+            getCurrencies: function () {
+                result = Meteor.http.get("https://e.seb.lt/mainib/web.p?act=currencyrates&lang=LIT");
+                $ = cheerio.load(result.content);
+                var resp = $('#curr_rates_from > option:nth-child(1)').text();
+                //var options = $('#curr_rates_from option');
+                //var resp = $.map(options ,function(option) {
+                //    return option.value;
+                //});
+                //console.log(resp);
+                return resp;
+            }
+        });
     });
 }
