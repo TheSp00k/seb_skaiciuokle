@@ -1,8 +1,5 @@
 if (Meteor.isClient) {
-    // counter starts at 0
-    Session.setDefault('counter', 0);
-
-    Template.header.events({
+        Template.header.events({
         'mouseenter .navigation li.dropdown': function (event) {
             if (!$('.navigation').hasClass('mobile')) {
                 $(event.target).removeClass('close');
@@ -40,21 +37,52 @@ if (Meteor.isClient) {
                 $(event.target.parentNode).addClass('open');
             }
         }
-
     });
 
     Meteor.call('getCurrencies', function (error, result) {
         if (error) {
             console.log('error', error);
         }
-        console.log(result);
-
         Session.set("currencies", result);
     });
 
+    Template.currency_changer.events({
+        'keyup #having, keyup #getting': function(event) {
+            Session.set( "lastInput", event.target.id );
+            var amount = $(event.target).val();
+            if(isNaN(amount)) {
+                $(event.target).css('background-color', '#f2dede');
+                $('#calculate').attr('disabled', 'disabled').css({'cursor': 'not-allowed', 'transparent': '5%'});
+            } else {
+                $(event.target).css('background-color', '#ffffff');
+                $('#calculate').removeAttr('disabled').css('cursor', 'pointer');
+            }
+        },
+        'click #calculate': function(event) {
+
+            var lastInput = Session.get('lastInput');
+            var sell = $('#sell').val();
+            var buy = $('#buy').val();
+            var result;
+
+            if (lastInput == 'having') {
+                result = (buy / sell) * $('#'+lastInput).val();
+                $('#getting').val(result.toFixed(2));
+            } else {
+                result = (sell / buy) * $('#'+lastInput).val();
+                $('#having').val(result.toFixed(2));
+            }
+        }
+    });
+
+
     Template.currency_changer.helpers({
         calculator: function () {
-            return Session.get("currencies");
+            var currencies = Session.get("currencies");
+            return currencies;
+        },
+        isValid:function(currency){
+            return !isNaN(currency);
         }
     });
 }
@@ -67,13 +95,16 @@ if (Meteor.isServer) {
             getCurrencies: function () {
                 result = Meteor.http.get("https://e.seb.lt/mainib/web.p?act=currencyrates&lang=LIT");
                 $ = cheerio.load(result.content);
-                var resp = $('#curr_rates_from > option:nth-child(1)').text();
-                //var options = $('#curr_rates_from option');
-                //var resp = $.map(options ,function(option) {
-                //    return option.value;
-                //});
-                //console.log(resp);
-                return resp;
+                var resultArr = [];
+                $('#content01 > div > div > div > table > tbody > tr:not(.hidden)').each(function(i, element){
+                    resultArr.push({
+                        text: $(this).find(' > td:nth-child(1)').text().trim(),
+                        sell: parseFloat($(this).find(' > td:nth-child(5)').text().trim().replace(/,/g, '.')),
+                        buy: parseFloat($(this).find(' > td:nth-child(4)').text().trim().replace(/,/g, '.'))
+                    });
+                });
+
+                return resultArr;
             }
         });
     });

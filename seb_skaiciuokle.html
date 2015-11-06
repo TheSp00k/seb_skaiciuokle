@@ -92,24 +92,32 @@
                 <label for="having">Turiu (noriu parduoti)</label>
                 <input type="text" id="having" name="having" placeholder="1,00"/>
 
-                <select class="custom-select" name="having_currency">
-                    <option>USD</option>
-                    <option>USD</option>
-                    <option>USD</option>
+                <select id="sell" class="custom-select" name="having_currency">
+                    <option value="1">EUR - euras</option>
+                    {{#each calculator}}
+                        {{#if isValid sell}}
+                            <option value="{{sell}}">{{text}}</option>
+                        {{/if}}
+                    {{/each}}
                 </select>
             </div>
+
+
 
             <div class="form-part">
                 <label for="getting">Noriu gauti (noriu pirkti)</label>
                 <input type="text" id="getting" name="getting" placeholder="1,00"/>
 
-                <select class="custom-select" name="getting_currency">
-                    <option>USD</option>
-                    <option>USD</option>
-                    <option>USD</option>
+                <select id="buy" class="custom-select" name="getting_currency">
+                    <option value="1">EUR - euras</option>
+                    {{#each calculator}}
+                        {{#if isValid buy}}
+                            <option value="{{buy}}">{{text}}</option>
+                        {{/if}}
+                    {{/each}}
                 </select>
             </div>
-            <input class="custom_button" value="SKAIČIUOTI" type="submit"/>
+            <button type="button" class="custom_button" id="calculate">SKAIČIUOTI</button>
         </form>
     </section>
 </template>
