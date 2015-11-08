@@ -1,16 +1,12 @@
 if (Meteor.isClient) {
         Template.header.events({
         'mouseenter .navigation li.dropdown': function (event) {
-            if (!$('.navigation').hasClass('mobile')) {
-                $(event.target).removeClass('close');
-                $(event.target).addClass('open');
-            }
+            $(event.target).removeClass('close');
+            $(event.target).addClass('open');
         },
         'mouseleave .navigation li.dropdown': function (event) {
-            if (!$('.navigation').hasClass('mobile')) {
-                $(event.target).removeClass('open');
-                $(event.target).addClass('close');
-            }
+            $(event.target).removeClass('open');
+            $(event.target).addClass('close');
         },
         'click #menu-icon': function () {
             if (!$('.navigation').hasClass('mobile')) {
@@ -68,9 +64,13 @@ if (Meteor.isClient) {
             if (lastInput == 'having') {
                 result = (buy / sell) * $('#'+lastInput).val();
                 $('#getting').val(result.toFixed(2));
-            } else {
+                $('#getting, #having').css('background-color', '#ffffff');
+            } else if(lastInput == 'getting') {
                 result = (sell / buy) * $('#'+lastInput).val();
                 $('#having').val(result.toFixed(2));
+                $('#getting, #having').css('background-color', '#ffffff');
+            } else {
+                $('#getting, #having').css('background-color', '#f2dede');
             }
         }
     });

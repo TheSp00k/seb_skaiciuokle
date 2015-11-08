@@ -3,7 +3,7 @@
 
 @page-padding-side: 70px;
 @page-margin-side: auto;
-@page-padding-top: 40px;
+@page-padding-top: 155px;
 @page-max-width: 1010px;
 
 @navbar-color: #ffffff;
@@ -33,6 +33,36 @@ html {
 		overflow: auto;
 		min-height: 100vh;
 		margin: 0;
+
+		header {
+			font-size: @navbar-min-fontsize;
+			.padding-sides(@page-padding-side);
+			background-color: @navbar-bg;
+			position: absolute;
+			width: 100%;
+			color: @navbar-color;
+			.header-content {
+				.page-width(@page-margin-side, @page-max-width);
+				min-height: 115px;
+				> ul.navigation {
+					margin-top: 59px;
+					margin-bottom: 0;
+					padding-left: 0;
+					line-height: 56px;
+					> li {
+						margin-left: 20px;
+						float: left;
+					}
+				}
+			}
+			.navbar-logo {
+				margin-top: 40px;
+				font-size: @navbar-min-fontsize + 40px;
+				display: block;
+				font-weight: bold;
+			}
+		}
+
 		table, tr, td {
 			border: 0;
 			padding: 0;
@@ -63,41 +93,6 @@ html {
 
 .left {
 	float: left;
-}
-
-.dropdown.open ul.dropdown-menu, header > .header-content > ul.navigation.open {
-	display: block;
-}
-
-.dropdown.close ul.dropdown-menu, header > .header-content > ul.navigation.close {
-	display: none;
-}
-
-header {
-	font-size: @navbar-min-fontsize;
-	.padding-sides(@page-padding-side);
-	background-color: @navbar-bg;
-	color: @navbar-color;
-	.header-content {
-		.page-width(@page-margin-side, @page-max-width);
-		min-height: 115px;
-		> ul.navigation {
-			margin-top: 59px;
-			margin-bottom: 0;
-			padding-left: 0;
-			line-height: 56px;
-			> li {
-				margin-left: 20px;
-				float: left;
-			}
-		}
-	}
-	.navbar-logo {
-		margin-top: 40px;
-		font-size: @navbar-min-fontsize + 40px;
-		display: block;
-		font-weight: bold;
-	}
 }
 
 .container {
@@ -214,8 +209,6 @@ li > a {
 			top: 497.6px;
 			z-index: 72;
 		}
-
-
 	}
 }
 
@@ -276,7 +269,24 @@ li > a {
 	}
 }
 
+.dropdown.open ul.dropdown-menu {
+	display: block;
+}
+
+.dropdown.close ul.dropdown-menu {
+	display: none;
+}
+
 @media (max-width: 768px) {
+
+	header > .header-content > ul.navigation.open {
+		display: block;
+	}
+
+	header > .header-content > ul.navigation.close {
+		display: none;
+	}
+
 	.main_content, header {
 		.padding-sides(@page-padding-side - 50px);
 	}
@@ -298,6 +308,7 @@ li > a {
 
 	header > .header-content > ul.navigation > li {
 		float: none;
+		line-height: 20px;
 	}
 
 	#menu-icon {
@@ -422,54 +433,3 @@ footer {
 	width: 81px;
 	height: 81px;
 }
-
-//.USD {
-//	font-size: 14px;
-//	font-family: "Trebuchet MS";
-//	color: rgb(1, 1, 1);
-//	line-height: 1.2;
-//	text-align: left;
-//	-moz-transform: matrix( 1.0020618556701,0,0,1.00408163265306,0,0);
-//	-webkit-transform: matrix( 1.0020618556701,0,0,1.00408163265306,0,0);
-//	-ms-transform: matrix( 1.0020618556701,0,0,1.00408163265306,0,0);
-//	position: absolute;
-//	left: 832.688px;
-//	top: 428.1px;
-//	z-index: 59;
-//}
-//.Need {
-//	font-size: 14px;
-//	font-family: "Trebuchet MS";
-//	color: rgb(1, 1, 1);
-//	font-weight: bold;
-//	line-height: 1.2;
-//	text-align: left;
-//	-moz-transform: matrix( 1.0020618556701,0,0,1.00408163265306,0,0);
-//	-webkit-transform: matrix( 1.0020618556701,0,0,1.00408163265306,0,0);
-//	-ms-transform: matrix( 1.0020618556701,0,0,1.00408163265306,0,0);
-//	position: absolute;
-//	left: 818.848px;
-//	top: 355.095px;
-//	z-index: 58;
-//}
-
-//.Rectangle_1 {
-//	border-width: 1px;
-//	border-color: rgb(137, 137, 137);
-//	border-style: solid;
-//	background-color: rgb(255, 255, 255);
-//	position: absolute;
-//	left: 818px;
-//	top: 378px;
-//	width: 240px;
-//	height: 29px;
-//	z-index: 56;
-//}
-//.dropdown {
-//	position: absolute;
-//	left: 818px;
-//	top: 422px;
-//	width: 240px;
-//	height: 29px;
-//	z-index: 55;
-//}
